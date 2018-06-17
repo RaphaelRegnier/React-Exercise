@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { setFlats } from '../actions';
 
-import Flat from '../components/flat';
+import Flat from '../containers/flat';
 
 
 class FlatList extends Component {
@@ -32,6 +31,7 @@ class FlatList extends Component {
 }
 
 // function to wire the action to the props of the component
+import { setFlats } from '../actions';
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
