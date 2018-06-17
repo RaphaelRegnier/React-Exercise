@@ -8,8 +8,9 @@ class Flat extends Component {
     //REDUX ACTION
     this.props.selectFlat(this.props.flat);
   }
-
+  // the re-rendering is triggered by Redux when there is a change in the selectedFlat prop, when the re-rendering is done, we check if this instance of the flat is the same as the selectedFlat instance. If it is, we add the class 'selected'
   render () {
+    console.log("rendered!")
     const style = {
       backgroundImage: `url(${this.props.flat.imageUrl})`
     };
@@ -17,6 +18,7 @@ class Flat extends Component {
     let classes = "flat card";
     if(this.props.flat === this.props.selectedFlat) {
       classes += " selected";
+      console.log("selected!")
     }
 
     return (
@@ -46,3 +48,5 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapReduxStateToProps, mapDispatchToProps)(Flat);
+
+//When you click a flat, Redux checks if the selectedFlat is different from the one you're passing as an argument to the action. If it's the same, nothing is rendered again. If it's different, all the flats are re-rendered and the change in props is made.
