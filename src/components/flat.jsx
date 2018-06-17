@@ -9,8 +9,8 @@ const Flat = (props) => {
     return(
       <div className="flat card" style={style}>
         <div className="card-description">
-          <h2>{this.props.flat.name}</h2>
-          <p>{this.props.flat.price} {this.props.flat.priceCurrency}</p>
+          <h2>{props.flat.name}</h2>
+          <p>{props.flat.price} {props.flat.priceCurrency}</p>
         </div>
         <a className="card-link" href="#" ></a>
       </div>
